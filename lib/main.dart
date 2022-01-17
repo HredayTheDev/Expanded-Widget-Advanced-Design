@@ -1,5 +1,6 @@
 import 'package:app_bar/another_deign.dart';
 import 'package:app_bar/advanced_design.dart';
+import 'package:app_bar/stack_design.dart';
 import 'package:app_bar/very_good_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -91,7 +92,7 @@ class MyApp extends StatelessWidget {
                       ],
                     ))),
             Expanded(
-                flex: 5,
+                flex: 4,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
@@ -116,10 +117,24 @@ class MyApp extends StatelessWidget {
                   ),
                 )),
             Expanded(
-                flex: 1,
+                flex: 2,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
+
+                     child: RaisedButton(
+                      onPressed: () {
+                        print("Hi");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const StackDesign()));
+                      },
+                      child: const Text(
+                        "Stack Widget Design",
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ),
+                    ),
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
